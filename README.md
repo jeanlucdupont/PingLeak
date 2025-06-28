@@ -1,26 +1,27 @@
 # PingLeak
-PoC that shows how easy it is to exfiltrate data over ICMP.
 
-PingLeak Client. Usually, a Windows machine. Must have python.
-PingLeak Server. A Linux machine. Must run as root. Must be internet facing and accepting ICMP requests.
+PoC demonstrating how easily data can be exfiltrated over ICMP.
 
-This PoC has so much room for improvement but it works.
-Run the pingleaksrv.py on the Linux server. 
-Run pingleakclt.py on the Windows machines. Specify a directory to exfiltrate, a file pattern (It can be *.* but that could be a looong process), and the public IP of the Linux server.
+PingLeak Client: Typically a Windows machine with Python installed.
+PingLeak Server: A Linux machine, must run as root, internet-facing, and able to receive ICMP requests.
 
-PingLeak Client will send the files. PingLeak Server will receive the file and will recreate locally the directory structure of the client. Each directory structure is identified by a client machine name.
-Process can be long. 
+This PoC has plenty of room for improvement, but it functions as intended.
+To use it:
+- Run pingleaksrv.py on the Linux server.
+- Run pingleakclt.py on the Windows machine. Specify a directory to exfiltrate, a file pattern (can be *.* but that may take a long time), and the public IP of the Linux server.
 
-This tool is a good test to check if your Firewall detect/block this activity. I would also use it to test the DLP.
+The PingLeak Client sends the files. The PingLeak Server receives them and recreates the directory structure locally, using the client machine name as an identifier. Note: the process can be lengthy.
+
+This tool is useful for testing whether your firewall detects or blocks this kind of activity. It's also useful for testing your DLP.
 
 What's missing:
-- Multiple session management.
-- Packet sequencing.
-- Having a true ICMP server allowing ICMP reply. RN, we're just sniffing the network on the server side.
-- Checksum computation.
-- Retry on checksum failure.
-- Compression/encryption.
-- The client should be written in C to generate a standalone executable.
+- Multiple session management
+- Packet sequencing
+- A proper ICMP server that replies to ICMP requests (RN, the server only sniffs traffic)
+- Checksum computation
+- Retry mechanism for checksum failure
+- Compression/encryption
+- A C-based client to produce a standalone executable
   
 _This project is intended for educational and research purposes only. Unauthorized use of this tool to access or exfiltrate data from systems you do not own or have explicit permission to test will probably get you into legal trouble. Use responsibly and stay on the right side of the law._
 
