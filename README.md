@@ -20,3 +20,5 @@ What's missing:
 - Checksum computation.
 - Retry on checksum failure.
 - The client should be written in C to generate a standalone executable.
+
+![image](https://github.com/user-attachments/assets/d1ece201-8faf-43a5-893b-4cc075624ea9)
