@@ -19,6 +19,10 @@ What's missing:
 - Having a true ICMP server allowing ICMP reply. RN, we're just sniffing the network on the server side.
 - Checksum computation.
 - Retry on checksum failure.
+- Compression/encryption.
 - The client should be written in C to generate a standalone executable.
+  
+This project is intended for educational and research purposes only. Unauthorized use of this tool to access or exfiltrate data from systems you do not own or have explicit permission to test will probably get you into legal trouble. Use responsibly and stay on the right side of the law.
 
 ![image](https://github.com/user-attachments/assets/d1ece201-8faf-43a5-893b-4cc075624ea9)
+
